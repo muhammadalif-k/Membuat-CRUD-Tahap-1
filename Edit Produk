@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <title>Input Barang</title>
+    <style type="text/css">
+        h1{
+            color: rgb(0, 0, 0);
+            font-family: Georgia, 'Century Gothic', Times, serif;
+        }
+        body{
+            color: rgb(0, 0, 0);
+            background-image: url(tembok.jpg);
+            background-size: cover;
+            background-attachment: fixed;
+            width: 75%;
+            margin: auto;
+            padding: 10px;
+        }
+        button{
+            margin: right;
+            width: 120px;
+            position: relative;
+        }
+        .form-group{
+            color: rgb(0, 0, 0);
+            font-family:  Georgia, 'Century Gothic', Times, serif;
+        }
+        .value{
+            color: rgb(0, 0, 0);
+        }
+    </style>
+    <body>
+
+    <?php
+$key = $_GET['key'];
+
+    ?>
+        <div class="container">
+            <center><h1>Form Edit Produk</h1></center>
+
+    
+    <form method="POST" action="proses_edit.php">
+        <div class="form-group">
+            <label for="staticEmail" color="rgb(255, 255, 255)" >Kode Produk</label>
+            <div class="col-sm-10">
+                <input type="hidden" readonly class="form-control-plaintext" value="<?php echo $key;?>" " name="kodes" >
+            </div>
+        </div>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Nama Produk</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" name="nama" placeholder="Nama Produk" >
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Harga Produk</label>
+                <div class="col-sm-10">
+                    <input type="number" class="form-control" name="harga" placeholder="Harga produk" >
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Satuan</label>
+                <div class="col-sm-10">
+                    <select class="form-control" name="satuanp" id="">
+                        <option value="">Pilih Satuan...</option>
+                        <option value="Mangkok">Mangkok</option>
+                        <option value="Piring">Piring</option>
+                        <option value="Gelas">Gelas</option>
+                        <option value="Botol">Botol</option>
+                        <option value="Soda">Soda</option>
+                        <option value="Lainnya">Lainnya</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Kategori</label>
+                <div class="col-sm-10">
+                    <select class="form-control" name="kategoris" id="">
+                        <option value="">Pilih Kategori...</option>
+                        <option value="Makanan">Makanan</option>
+                        <option value="Minuman">Minuman</option>
+                        <option value="Buah-Buahan">Buah-Buahan</option>
+                        <option value="Lainnya">Lainnya</option> 
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmail1">URL Gambar</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" name="url_gambars" placeholder="URL Gambar">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Stok</label>
+                <div class="col-sm-10">
+                    <input type="number" class="form-control" name="stoks" placeholder="Stok">
+                </div>
+            </div>
+            <center>
+            <button type="reset" class="btn btn-danger">Cancel</button>
+            <input type="submit" name="btn_submit" class="btn btn-primary" value="Edit">
+            </center>
+    </form>
+        </div>
+    </body>
+    </html>
