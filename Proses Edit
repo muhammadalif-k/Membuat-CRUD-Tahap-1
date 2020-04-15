@@ -1,0 +1,17 @@
+<?php
+include('CRUD/koneksi.php');
+
+$kd_produk=$_POST['kodes'];
+$nm_produk=$_POST['nama'];
+$harga_produk=$_POST['harga'];
+$satuan=$_POST['satuanp'];
+$kategori=$_POST['kategoris'];
+$url_gambar=$_POST['url_gambars'];
+$stok=$_POST['stoks'];
+
+$hasil=$con->query("UPDATE `produk` SET `kd_produk` = '$kd_produk', `nm_produk` = '$nm_produk', `harga_produk` = '$harga_produk', `satuan` = '$satuan', `kategori` = '$kategori', `url_gambar` = '$url_gambar', `stok` = '$stok' WHERE `produk`.`kd_produk` = $kd_produk");
+if($hasil==TRUE){
+    header("location:proses_simpan.php");
+}else{
+    echo "Gagal Edit Data";
+}
