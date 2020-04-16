@@ -64,7 +64,7 @@ if (isset($_GET['info'])) {
     <td><?php echo $data['harga_produk']; ?></td>
     <td><?php echo $data['satuan']; ?></td>
     <td><?php echo $data['kategori']; ?></td>
-    <td><?php echo $data['url_gambar']; ?></td>
+    <td><?php echo "<img src=".$data['url_gambar'].">";?></td>
 
     <?php if($data['stok']<=5){
         echo "<td class='red'>".$data['stok']."</td>";
